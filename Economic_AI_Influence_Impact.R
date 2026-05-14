@@ -134,7 +134,7 @@ ggplot(avg_group,
     y = "Average Revenue Increase (%)"
   )
 
-# Aaverage revenue increase by year and industry group
+# Average revenue increase by year and industry group
 avg_year_group <- aggregate(
   Revenue.Increase.Due.to.AI.... ~ Year + Industry.Group,
   data,
