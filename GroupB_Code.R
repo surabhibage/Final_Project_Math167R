@@ -427,7 +427,7 @@ ggplot(
 ) + geom_bar()
   
 #barplot comparing 2 variables 
-barplot(data$AI.Adoption.Rate...., names.arg = ai_dataset$'Country', cex.names = 0.8
+barplot(data$AI.Adoption.Rate...., names.arg = data$'Country', cex.names = 0.8
         , main= "AI adoption in different countries", xlab = "Countries", ylab = "AI adoption rate")
 
 
