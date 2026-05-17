@@ -4,6 +4,10 @@
 # How does AI being used affect job loss and human AI collaboration across different industries?
 #_______________________________________________________________________________________________
 
+
+# Package installation and data reading, exploration 
+#_______________________________________________________________________________________________
+
 install.packages("ggplot2")  # Ran once
 library(ggplot2)             
 
@@ -12,7 +16,9 @@ head(data)
 str(data)
 names(data)
 
+
 # Average Job Loss due per industry sorted in descending order 
+#_______________________________________________________________________________________________
 industry_loss <- aggregate(
   `Job.Loss.Due.to.AI....` ~ Industry, # job loss grouped by industry 
   data = data,
@@ -23,7 +29,9 @@ industry_loss <- industry_loss[ # sorting by job loss in descending order
 ]
 industry_loss # final result 
 
+
 # Finding the industries with the highest job loss percentage (may leave out of final analysis)
+#_______________________________________________________________________________________________
 industry_loss_max <- aggregate(
   Job.Loss.Due.to.AI.... ~ Industry,
   data = data,
@@ -31,7 +39,9 @@ industry_loss_max <- aggregate(
 )
 industry_loss_max
 
+
 # Boxplot showing distribution of Job Loss per industry 
+#_______________________________________________________________________________________________
 ggplot(data,
        aes(
          x = reorder( # instead of directly taking the column, we reorder in descending order
@@ -49,7 +59,9 @@ ggplot(data,
     title = "AI-Related Job Loss Across Industries"
   )
 
+
 # A table of the job loss of each industry for each year 
+#_______________________________________________________________________________________________
 industry_year_table <- aggregate(
   Job.Loss.Due.to.AI.... ~ Industry + Year,
   data = data,
@@ -57,7 +69,9 @@ industry_year_table <- aggregate(
 )
 industry_year_table
 
+
 # Average AI related job loss trend per year for each industry 
+#_______________________________________________________________________________________________
 industry_year <- aggregate(
   Job.Loss.Due.to.AI.... ~ Industry + Year,
   data = data,
@@ -84,6 +98,7 @@ ggplot(industry_year,
 
 
 # Does higher human AI collaboration reduce job loss? 
+#_______________________________________________________________________________________________
 # This line shows the data is likely synthetic or randomly generated 
 ggplot(data,
        aes(
@@ -98,7 +113,9 @@ ggplot(data,
     y = "Job Loss Due to AI (%)"
   ) 
 
+
 # Which industried have the highest human-AI collaboration? 
+#_______________________________________________________________________________________________
 industry_collab <- aggregate( # group the Human AI Collaboration by Industry
   Human.AI.Collaboration.Rate.... ~ Industry,
   data = data,
@@ -126,7 +143,9 @@ ggplot(industry_collab,
     y = "Human-AI Collaboration Rate (%)"
   )
 
+
 # Collaboration over time? 
+#_______________________________________________________________________________________________
 collab_year <- aggregate(
   Human.AI.Collaboration.Rate.... ~ Industry + Year,
   data = data,
