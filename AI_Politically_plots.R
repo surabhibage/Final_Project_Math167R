@@ -17,30 +17,30 @@ library(tidyverse)
 library(ggplot2)
 
 #loading .csv file
-ai_dataset <- read.csv("Data/Global_AI_Content_Impact_Dataset.csv")
-ai_dataset
+data <- read.csv("Data/Global_AI_Content_Impact_Dataset.csv")
+data
 
-ggplot(ai_dataset,
+ggplot(data,
        aes(x = AI.Adoption.Rate...., y = Year)) + geom_point()
 #Comment: we compared AI adoption rate vs year, and the scatterplot
 # shows similar adoption rates throughout the years
 
 #let's try another visualization
 #This time we compare regulation status with AI adoption rate
-ggplot(ai_dataset,
+ggplot(data,
        aes(x = Regulation.Status, y =  AI.Adoption.Rate....)) + geom_boxplot()
 #Figure 1
-ggplot(ai_dataset,
+ggplot(data,
        aes(x = AI.Adoption.Rate...., y = Regulation.Status)) + geom_boxplot()
 
 #AI adoption rate histogram distribution
-ggplot(ai_dataset, aes(x = AI.Adoption.Rate....)
+ggplot(data, aes(x = AI.Adoption.Rate....)
 ) + 
   geom_histogram(bins = 18,
                  fill = "pink",
                  color = "white")
 #year histogram distribution
-ggplot(ai_dataset, aes(x = Year)
+ggplot(data, aes(x = Year)
 ) + 
   geom_histogram(bins = 18,
                  fill = "lightblue",
@@ -48,18 +48,18 @@ ggplot(ai_dataset, aes(x = Year)
 
 #Figure 2
 ggplot(
-  ai_dataset,
+  data,
   aes(x = Regulation.Status,
       fill = Country)
 ) + geom_bar()
   
 #barplot comparing 2 variables 
-barplot(ai_dataset$AI.Adoption.Rate...., names.arg = ai_dataset$'Country', cex.names = 0.8
+barplot(data$AI.Adoption.Rate...., names.arg = data$'Country', cex.names = 0.8
         , main= "AI adoption in different countries", xlab = "Countries", ylab = "AI adoption rate")
 
 
 #Figure 3
-ggplot(  ai_dataset,
+ggplot(  data,
          aes(x = Country,
              y =  AI.Adoption.Rate....,
              fill = "pink",
@@ -68,13 +68,13 @@ ggplot(  ai_dataset,
 
 #(figure 4)
 ggplot(
-  ai_dataset,
+  data,
   aes(x = factor(Year), y = AI.Generated.Content.Volume..TBs.per.year.)
   ) + geom_col(fill = "lightblue",width = 0.5)
          
 # (Fig 5)
 ggplot(
-  ai_dataset, 
+  data, 
   aes(x=factor(Year), fill = Top.AI.Tools.Used)
   )+geom_bar()+
   scale_fill_manual(values = c(
