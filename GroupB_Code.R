@@ -1,6 +1,11 @@
 # -----------------------------------------------------------------------------------
 # Final Project: AI-Generated Content and Revenue Growth
-#
+# TO START: Load the dataset and libraries 
+data <- read.csv("~/data.csv")
+# -----------------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------------
+# Julia 
 # Research Question:
 # How does AI-generated content influence revenue growth across industries over time?
 #
@@ -19,7 +24,7 @@
 library(ggplot2)
 
 # Read dataset
-data <- read.csv("~/Downloads/Global_AI_Content_Impact_Dataset 2.csv")
+# data <- read.csv("~/Downloads/Global_AI_Content_Impact_Dataset 2.csv")
 
 # View dataset structure
 names(data)
@@ -214,7 +219,7 @@ ggplot(avg_tool,
 #install.packages("ggplot2")  # Ran once
 #library(ggplot2)             
 
-data <- read.csv("~/Downloads/Global_AI_Content_Impact_Dataset.csv")
+# data <- read.csv("~/Downloads/Global_AI_Content_Impact_Dataset.csv")
 head(data)
 str(data)
 names(data)
@@ -390,8 +395,8 @@ library(tidyverse)
 #library(ggplot2)
 
 #loading .csv file
-data <- read.csv("Data/Global_AI_Content_Impact_Dataset.csv")
-data
+# data <- read.csv("Data/Global_AI_Content_Impact_Dataset.csv")
+# data
 
 ggplot(data,
        aes(x = AI.Adoption.Rate...., y = Year)) + geom_point()
