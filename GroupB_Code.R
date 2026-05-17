@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------------
 # Final Project: AI-Generated Content and Revenue Growth
 # TO START: Load the dataset and libraries 
-data <- read.csv("~/data.csv")
+data <- read.csv("/Users/surabhibage/Downloads/Global_AI_Content_Impact_Dataset.csv")
 # -----------------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------------
@@ -380,7 +380,7 @@ ggplot(collab_year,
 # Name: Megha Sengupta
 
 # (Optional but recommended) start clean:
-rm(list = ls())
+# rm(list = ls())
 
 # (Optional) make printing easier to read:
 options(stringsAsFactors = FALSE)
@@ -430,7 +430,7 @@ ggplot(
   aes(x = Regulation.Status,
       fill = Country)
 ) + geom_bar()
-  
+
 #barplot comparing 2 variables 
 barplot(data$AI.Adoption.Rate...., names.arg = data$'Country', cex.names = 0.8
         , main= "AI adoption in different countries", xlab = "Countries", ylab = "AI adoption rate")
@@ -448,13 +448,13 @@ ggplot(  data,
 ggplot(
   data,
   aes(x = factor(Year), y = AI.Generated.Content.Volume..TBs.per.year.)
-  ) + geom_col(fill = "lightblue",width = 0.5)
-         
+) + geom_col(fill = "lightblue",width = 0.5)
+
 # (Fig 5)
 ggplot(
   data, 
   aes(x=factor(Year), fill = Top.AI.Tools.Used)
-  )+geom_bar()+
+)+geom_bar()+
   scale_fill_manual(values = c(
     "ChatGPT" = "purple",
     "Claude" = "lightblue",
