@@ -2,6 +2,7 @@
 # Name: Surabhi Bage
 # Question being answered: Social Influence (job loss and human AI collaboration)
 # How does AI being used affect job loss and human AI collaboration across different industries?
+# Fields being used: Human AI Collaboration, Job Loss %
 #_______________________________________________________________________________________________
 
 
